@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    body {
+        color: #eee;
+    }
+
+    .box {
+        position: relative;
+        border-radius: 50%;
+        border: 6px dotted #666;
+        width: 100px;
+        height: 100px;
+        animation: a 5s linear infinite;
+        display: inline-block;
+    }
+
+    .box:before {
+        box-sizing: border-box;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        width: 80px;
+        content: '';
+        height: 80px;
+        border-radius: 50%;
+        border: 15px solid transparent;
+        box-shadow: 0 0 0 10px #666, 0 0 0 10px #666 inset;
+    }
+
+    @keyframes a {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .box1 {
+        position: relative;
+        border-radius: 50%;
+        border: 6px solid #666;
+        width: 100px;
+        height: 100px;
+        animation: a 5s linear infinite;
+        -webkit-animation: a 5s linear infinite;
+        display: inline-block;
+        border-left: 6px solid transparent;
+    }
+
+    .box1:before {
+        width: 0;
+        height: 0;
+        line-height: 0;
+        font-size: 0;
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent #666 transparent transparent;
+        content: '';
+        position: absolute;
+        top: 71px;
+        left: -4px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
+
+    .box2 {
+        position: relative;
+        width: 0px;
+        height: 0px;
+        padding: 20px 10px;
+        border-width: 50px;
+        border-left: none;
+        border-color: transparent #666 transparent transparent;
+        border-style: solid;
+        box-shadow: inset 15px 0 #666;
+        display: inline-block;
+    }
+
+    .box2:after {
+        position: absolute;
+        top: -65px;
+        left: -30px;
+        width: 140px;
+        height: 140px;
+        content: '';
+        border-width: 20px;
+        border-style: double;
+        border-radius: 50%;
+        border-color: transparent #666 transparent transparent;
+    }
+
+    .box2:before {
+        position: absolute;
+        top: -40px;
+        left: -7px;
+        width: 90px;
+        height: 90px;
+        content: '';
+        border-width: 20px;
+        border-style: double;
+        border-radius: 50%;
+        border-color: transparent #666 transparent transparent;
+    }
+
+    .box3 {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 5px solid #666;
+        position: relative;
+    }
+
+    .box3:after {
+        width: 80px;
+        height: 6px;
+        content: '';
+        background: #666;
+        position: absolute;
+        top: 47px;
+        left: 10px;
+    }
+
+    .box3:before {
+        width: 6px;
+        height: 80px;
+        content: '';
+        background: #666;
+        position: absolute;
+        top: 10px;
+        left: 47px;
+    }
+
+    .box4 {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 5px solid #666;
+        position: relative;
+    }
+
+    .box4:after {
+        width: 40px;
+        height: 6px;
+        content: '';
+        background: #666;
+        position: absolute;
+        top: 47px;
+        left: 10px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
+
+    .box4:before {
+        width: 6px;
+        height: 60px;
+        content: '';
+        background: #666;
+        position: absolute;
+        top: 15px;
+        left: 60px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg)
+    }
+
+    .box5 {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 10px dotted #666;
+        animation: a1 5s infinite linear;
+    }
+
+    .box5:before {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        content: '';
+        border-radius: 50%;
+        top: 0px;
+        left: 0px;
+        border: 10px solid #666;
+        animation: a1 5s infinite linear;
+    }
+
+    .box5:after {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        content: '';
+        border-radius: 50%;
+        border: 10px solid #666;
+        top: 20px;
+        left: 20px;
+        animation: a1 5s infinite linear;
+    }
+
+    @keyframes a1 {
+        from {
+            transform: rotate(0deg);
+            border-color: red;
+        }
+        to {
+            transform: rotate(360deg);
+            border-color: green;
+        }
+    }
+
+    .box6 {
+        position: relative;
+        width: 0px;
+        height: 0px;
+        border: 80px solid #000;
+        border-left: none;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+        padding: 30px 25px;
+        box-shadow: inset 20px 0 0 #000;
+    }
+
+    .box6:after {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        content: '';
+        border-width: 50px;
+        border-radius: 50%;
+        border-style: double;
+        border-color: transparent #000 transparent transparent;
+        left: 60px;
+        top: -70px;
+    }
+</style>
+
+<body>
+    <div class="box"></div>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+    <div class="box6"></div>
+</body>
+
+</html>
